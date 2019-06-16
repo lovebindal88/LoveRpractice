@@ -13,3 +13,5 @@ inspect(model1)
 plot(model1)
 wholemilk= subset(model1,items %in% "whole milk")
 inspect(wholemilk)
+# convert from other file to json and use read.transaction
+#remove other rows, concat$ with {(starting) }(end), 
