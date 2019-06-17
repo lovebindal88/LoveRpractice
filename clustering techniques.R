@@ -9,7 +9,7 @@ library(class)
 library(mltools)
 library(data.table)
 pairs.panels(B,cex=1.5)
-plot(B$Fuel_Cost ~ B$Sales, text = B$utility_name)
+plot(B$Fuel_Cost ~ B$Sales)
 #adding labels to plot
-with(A,text(Fuel_Cost~Sales, labels= A$utility_name))
+with(A,text(Fuel_Cost~Sales, labels= A$utility_name, pos= 4,cex= 0.5))
 
