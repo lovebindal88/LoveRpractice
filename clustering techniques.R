@@ -29,3 +29,6 @@ modelhcut= cutree(modelh,3)
 modelhacut= cutree(modelha, 3)
 c= table(modelhcut,modelhacut)
 confusionMatrix(c)
+# using aggregate
+aggregate(scaledata,list(modelhcut),mean)
+# note that higher variation shows more significance in cluster
