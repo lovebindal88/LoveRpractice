@@ -23,3 +23,5 @@ cbind(pred, tsd$lc)
 MODELF= lm(lc~.,A)
 #USING ANOVA(analysis of variance)
 anova(MODELF,model3)
+#check p value at the end for significance
+#1-p value is confidence level and cannot be less than 95%
