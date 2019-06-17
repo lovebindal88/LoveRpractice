@@ -10,5 +10,6 @@ library(mltools)
 library(data.table)
 pairs.panels(B,cex=1.5)
 plot(B$Fuel_Cost ~ B$Sales, text = B$utility_name)
+#adding labels to plot
 with(A,text(Fuel_Cost~Sales, labels= A$utility_name))
 
