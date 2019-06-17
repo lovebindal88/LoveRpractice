@@ -18,6 +18,14 @@ scaledata= as.matrix(scale(B));scaledata
 #using kmeans
 m1 = kmeans(scaledata,3)
 plot(B$Fuel_Cost~ B$Sales, col = m1$cluster)
-#using hclust
+#using hclust with complete
 modelh= hclust(dist(scaledata), method = "complete") 
-plot(modelh, labels= A$utility_name)
+plot(modelh, labels= A$utility_name, hang = -1)
+# using hclust with average
+modelha= hclust(dist(scaledata), method = "average")
+plot(modelha, labels= A$utility_name, hang = -1)
+# using cutree function
+modelhcut= cutree(modelh,3)
+modelhacut= cutree(modelha, 3)
+c= table(modelhcut,modelhacut)
+confusionMatrix(c)
