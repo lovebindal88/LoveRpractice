@@ -32,3 +32,9 @@ confusionMatrix(c)
 # using aggregate
 aggregate(scaledata,list(modelhcut),mean)
 # note that higher variation shows more significance in cluster
+
+#plotting scree plot
+k.max=20
+wss= sapply(2:k.max, function(k)(kmeans(scaledata,k,nstart = 50,iter.max = 15)$tot.withinss))
+wss
+plot(2:k.max, wss, type = "b", xlab= "no. of clusters", ylab= "wss")
