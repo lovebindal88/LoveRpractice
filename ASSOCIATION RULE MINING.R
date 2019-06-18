@@ -21,5 +21,5 @@ inspect(check)
 # sorting to check selected items
 modelredcheck= apriori(Groceries,parameter = list(support=0.001, conf= 0.08), appearance = list(default="rhs",lhs= "bottled beer"))
 inspect(modelredcheck)
-
+#plotting for interactive graph
 plot(modelredcheck,method = "graph", interactive = TRUE)
