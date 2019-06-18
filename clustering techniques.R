@@ -11,12 +11,13 @@ library(data.table)
 pairs.panels(B,cex=1.5)
 plot(B$Fuel_Cost ~ B$Sales)
 #adding labels to plot
-with(A,text(Fuel_Cost~Sales, labels= A$utility_name, pos= 4,cex= 0.7))
+with(A,text(A$Fuel_Cost~A$Sales, labels= A$utility_name, pos= 4,cex= 0.7))
 #use one hot encoding
 B= one_hot(as.data.table(A))
 scaledata= as.matrix(scale(B));scaledata
 #using kmeans
-m1 = kmeans(scaledata,3)
+m1 = kmeans(scaledata,3);m1
+m2= kmeans(scaledata,5);m2
 plot(B$Fuel_Cost~ B$Sales, col = m1$cluster)
 #using hclust with complete
 modelh= hclust(dist(scaledata), method = "complete") 
